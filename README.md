@@ -1,10 +1,17 @@
-# Text onn Image
+# Text on Image
 
 <p align="center">
   <img src="./banner.png" alt="banner" />
 </p>
 
 A simple tool that writes text on any image based on X and Y coordinates, it can also combine images into one single PDF file.
+
+## How to Use
+
+- Clone the repository.
+- Install dependencies via yarn: `yarn`
+- For a test ride, run: `yarn test`
+- For an actual use, replace the image, coordinates, file name and other settings in config and build the app via: `yarn build && yarn start`
 
 ## The Story
 
