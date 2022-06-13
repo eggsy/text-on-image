@@ -10,7 +10,11 @@ import { getBaseDirectory } from "../functions/getBaseDirectory";
 import config from "../config";
 
 const run = async (fileName?: string) => {
-  const canvas = createCanvas(595, 842, "pdf");
+  const canvas = createCanvas(
+    config.pdf.sizes.width,
+    config.pdf.sizes.height,
+    "pdf"
+  );
   const ctx = canvas.getContext("2d");
 
   const outputDirectory = getOutputDirectory();

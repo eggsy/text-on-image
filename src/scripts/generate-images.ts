@@ -44,7 +44,10 @@ const tasks = new Listr<Ctx>([
           {
             title: "Creating canvas...",
             task: async (_, task) => {
-              const canvas = createCanvas(595, 210.5);
+              const canvas = createCanvas(
+                config.image.sizes.width,
+                config.image.sizes.height
+              );
               const ctx = canvas.getContext("2d");
 
               /* Get the absolute path of output directory and image */
