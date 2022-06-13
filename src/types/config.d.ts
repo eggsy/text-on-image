@@ -1,6 +1,6 @@
 type WidthHeight = { width: number; height: number };
 
-interface Config {
+export interface Config {
   outputDirectory: string;
   image: {
     path: string;

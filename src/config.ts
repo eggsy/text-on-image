@@ -1,3 +1,5 @@
+import type { Config } from "./types/config";
+
 export default {
   outputDirectory: "./output",
 
