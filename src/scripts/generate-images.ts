@@ -82,17 +82,19 @@ const tasks = new Listr<Ctx>([
                 const coloredText = yellow(`${i + 1}/${amount}`);
                 task.title = `Generating images (${coloredText})...`;
 
-                ctx.drawImage(image, 0, 0);
+                ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 
-                ctx.font = "20px Inter black";
-                ctx.fillStyle = "white";
-                ctx.textAlign = "right";
+                if (typeof config.text.position === "object") {
+                  ctx.font = "20px Inter black";
+                  ctx.fillStyle = "white";
+                  ctx.textAlign = "center";
 
-                ctx.fillText(
-                  `${i}`,
-                  config.text.position.x,
-                  config.text.position.y
-                );
+                  ctx.fillText(
+                    `${i}`,
+                    config.text.position.x,
+                    config.text.position.y
+                  );
+                }
 
                 writeFileSync(
                   `${outputDirectory}/${config.image.fileName.replace(
