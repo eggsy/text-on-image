@@ -9,6 +9,7 @@ export interface Config {
     sizes: WidthHeight;
   };
   text: {
+    align: "left" | "center" | "right";
     position: {
       x: number;
       y: number;

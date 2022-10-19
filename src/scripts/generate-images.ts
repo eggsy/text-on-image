@@ -87,7 +87,7 @@ const tasks = new Listr<Ctx>([
                 if (typeof config.text.position === "object") {
                   ctx.font = "20px Inter black";
                   ctx.fillStyle = "white";
-                  ctx.textAlign = "center";
+                  ctx.textAlign = config.text?.align || "left";
 
                   ctx.fillText(
                     `${i}`,

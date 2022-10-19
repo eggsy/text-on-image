@@ -1,6 +1,6 @@
 import type { Config } from "./types/config";
 
-export default {
+const config: Config = {
   outputDirectory: "./output",
 
   image: {
@@ -15,6 +15,7 @@ export default {
   },
 
   text: {
+    align: "left",
     position: {
       x: 116,
       y: 203,
@@ -29,4 +30,6 @@ export default {
     },
     positions: [0, 210.5, 421, 631.5],
   },
-} as Config;
+};
+
+export default config;
