@@ -10,6 +10,7 @@ export interface Config {
   };
   text: {
     align: "left" | "center" | "right";
+    size?: number;
     position: {
       x: number;
       y: number;

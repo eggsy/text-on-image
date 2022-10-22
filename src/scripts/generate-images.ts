@@ -85,7 +85,7 @@ const tasks = new Listr<Ctx>([
                 ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
 
                 if (typeof config.text.position === "object") {
-                  ctx.font = "20px Inter black";
+                  ctx.font = `${config.text.size || "24"}px Inter black`;
                   ctx.fillStyle = "white";
                   ctx.textAlign = config.text?.align || "left";
 
