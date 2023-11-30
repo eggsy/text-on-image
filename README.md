@@ -11,6 +11,7 @@ A simple tool that writes text on any image based on X and Y coordinates, it can
 - Clone the repository.
 - Install dependencies via yarn: `yarn`
 - For a test ride, run: `yarn test`
+- Configure the options based on your preferences in `config.example.ts` and rename it to `config.ts`
 - For an actual use, replace the image, coordinates, file name and other settings in config and build the app via: `yarn build && yarn start`
 
 ## The Story

@@ -3,3 +3,4 @@ output
 dist
 *.pdf
 .DS_Store
+config.ts
