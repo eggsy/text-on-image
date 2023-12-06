@@ -1,3 +1,5 @@
+import type { CanvasGradient, CanvasPattern } from "canvas";
+
 type WidthHeight = { width: number; height: number };
 
 export interface Config {
@@ -10,7 +12,10 @@ export interface Config {
   };
   text: {
     align: "left" | "center" | "right";
+    prefix?: string;
+    suffix?: string;
     size?: number;
+    color?: string | CanvasGradient | CanvasPattern;
     position: {
       x: number;
       y: number;

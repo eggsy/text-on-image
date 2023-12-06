@@ -5,7 +5,7 @@ const config: Config = {
 
   image: {
     path: "./image.png",
-    fileName: "Ticket {1}.png",
+    fileName: "Ticket A{1}.png",
     amount: 400,
     sizes: {
       // sizes of the actual image
@@ -15,10 +15,12 @@ const config: Config = {
   },
 
   text: {
-    align: "left",
+    prefix: "A",
+    align: "right",
+    color: "white",
     position: {
-      x: 116,
-      y: 203,
+      x: 235,
+      y: 392,
     },
   },
 
