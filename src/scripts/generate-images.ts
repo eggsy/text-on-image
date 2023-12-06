@@ -28,6 +28,8 @@ interface Ctx {
   skip: boolean;
 }
 
+let pdfSaved = false;
+
 // Tasks
 const tasks = new Listr<Ctx>([
   {
@@ -86,11 +88,13 @@ const tasks = new Listr<Ctx>([
 
               if (typeof config.text.position === "object") {
                 ctx.font = `${config.text.size || "24"}px Inter black`;
-                ctx.fillStyle = "white";
-                ctx.textAlign = config.text?.align || "left";
+                ctx.fillStyle = config.text?.color ?? "white";
+                ctx.textAlign = config.text?.align ?? "left";
 
                 ctx.fillText(
-                  `${i}`,
+                  `${config.text?.prefix ?? ""}${i}${
+                    config.text?.suffix ?? ""
+                  }`,
                   config.text.position.x,
                   config.text.position.y
                 );
@@ -133,6 +137,8 @@ const tasks = new Listr<Ctx>([
               message: "Save to PDF?",
             });
 
+            pdfSaved = savePdf;
+
             if (savePdf === true) {
               await GeneratePdf.run();
               task.title = "Saved PDF file";
@@ -142,6 +148,11 @@ const tasks = new Listr<Ctx>([
         {
           title: "Delete output directory?",
           task: async (__, task) => {
+            if (!pdfSaved) {
+              task.skip();
+              return;
+            }
+
             const prompt = task.prompt(ListrEnquirerPromptAdapter);
 
             const removeOutput = await prompt.run<boolean>({
